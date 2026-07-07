@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'name' => 'Elite Physio Clinics',
+    'phone' => '+44 333 577 9553',
+    'whatsapp' => '+44 7405 825954',
+    'email' => 'elitephysioclinics@gmail.com',
+    'address' => "Mare Fair, Sol Central\nGround Floor, Unit 3\nNorthampton NN1 1SR",
+    'whatsapp_url' => 'https://wa.me/447405825954?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Elite%20Physio%20Clinics.',
+
+    'slot_duration_minutes' => 30,
+    'booking_window_weeks' => 4,
+
+    'conditions' => [
+        ['slug' => 'back-pain-sciatica', 'title' => 'Back Pain and Sciatica', 'category' => 'adult'],
+        ['slug' => 'neck-pain-whiplash', 'title' => 'Neck Pain and Whiplash', 'category' => 'adult'],
+        ['slug' => 'arthritis', 'title' => 'Arthritis', 'category' => 'adult'],
+        ['slug' => 'sports-injuries', 'title' => 'Sports Injuries', 'category' => 'adult'],
+        ['slug' => 'work-related-injury', 'title' => 'Work Related Injury or Pain', 'category' => 'adult'],
+        ['slug' => 'muscle-tendon-ligament', 'title' => 'Muscles, Tendons and Ligaments Injuries', 'category' => 'adult'],
+        ['slug' => 'ankle-knee', 'title' => 'Ankle and Knee Injuries/Problems', 'category' => 'adult'],
+        ['slug' => 'frozen-shoulder', 'title' => 'Frozen Shoulder', 'category' => 'adult'],
+        ['slug' => 'tennis-elbow', 'title' => 'Tennis Elbow', 'category' => 'adult'],
+        ['slug' => 'post-surgery-rehab', 'title' => 'Rehabilitation Following Surgery', 'category' => 'adult'],
+        ['slug' => 'disc-prolapses', 'title' => 'Disc Prolapses', 'category' => 'adult'],
+        ['slug' => 'torticollis', 'title' => 'Head Turning Preference & Torticollis', 'category' => 'paediatric'],
+        ['slug' => 'flat-head-syndrome', 'title' => 'Flat Head Syndrome', 'category' => 'paediatric'],
+        ['slug' => 'delayed-milestones', 'title' => 'Delayed Developmental Milestones', 'category' => 'paediatric'],
+        ['slug' => 'cerebral-palsy', 'title' => 'Cerebral Palsy & Birth-Related Conditions', 'category' => 'paediatric'],
+        ['slug' => 'balance-coordination', 'title' => 'Balance & Coordination Difficulties', 'category' => 'paediatric'],
+        ['slug' => 'genetic-neurological', 'title' => 'Chromosomal, Genetic & Neurological Conditions', 'category' => 'paediatric'],
+        ['slug' => 'clubfoot', 'title' => 'Positional Talipes (Clubfoot)', 'category' => 'paediatric'],
+        ['slug' => 'gait-disorders', 'title' => 'Gait Disorders', 'category' => 'paediatric'],
+        ['slug' => 'child-musculoskeletal', 'title' => 'Musculoskeletal Conditions in Children', 'category' => 'paediatric'],
+        ['slug' => 'osgood-schlatter', 'title' => 'Osgood-Schlatter Disease', 'category' => 'paediatric'],
+        ['slug' => 'severs-disease', 'title' => "Sever's Disease", 'category' => 'paediatric'],
+        ['slug' => 'osteochondritis-dissecans', 'title' => 'Osteochondritis Dissecans', 'category' => 'paediatric'],
+        ['slug' => 'other', 'title' => 'Other', 'category' => null],
+    ],
+
+    'default_hours' => [
+        'Monday' => ['start' => '16:30', 'end' => '21:00', 'is_open' => true],
+        'Tuesday' => ['start' => '16:30', 'end' => '21:00', 'is_open' => true],
+        'Wednesday' => ['start' => '16:30', 'end' => '21:00', 'is_open' => true],
+        'Thursday' => ['start' => '16:30', 'end' => '21:00', 'is_open' => true],
+        'Friday' => ['start' => '16:30', 'end' => '21:00', 'is_open' => true],
+        'Saturday' => ['start' => '08:00', 'end' => '21:00', 'is_open' => true],
+        'Sunday' => ['start' => null, 'end' => null, 'is_open' => false],
+    ],
+];
