@@ -9,7 +9,7 @@ class SitemapController extends Controller
 {
     public function index(): Response
     {
-        $base = SiteSetting::seoDefaults()['site_url'];
+        $base = rtrim(SiteSetting::seoDefaults()['site_url'], '/');
         $now = now()->toAtomString();
 
         $urls = [
@@ -22,7 +22,7 @@ class SitemapController extends Controller
 
         foreach ($urls as $url) {
             $xml .= "  <url>\n";
-            $xml .= '    <loc>'.e($url['loc'])."</loc>\n";
+            $xml .= '    <loc>'.htmlspecialchars($url['loc'], ENT_XML1 | ENT_QUOTES, 'UTF-8')."</loc>\n";
             $xml .= "    <lastmod>{$now}</lastmod>\n";
             $xml .= '    <changefreq>'.$url['changefreq']."</changefreq>\n";
             $xml .= '    <priority>'.$url['priority']."</priority>\n";
@@ -31,6 +31,9 @@ class SitemapController extends Controller
 
         $xml .= '</urlset>';
 
-        return response($xml, 200)->header('Content-Type', 'application/xml');
+        return response($xml, 200, [
+            'Content-Type' => 'application/xml; charset=UTF-8',
+            'Cache-Control' => 'public, max-age=3600',
+        ]);
     }
 }
