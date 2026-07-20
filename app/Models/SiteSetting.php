@@ -55,9 +55,14 @@ class SiteSetting extends Model
      */
     public static function allCached(): array
     {
-        return Cache::remember('site_settings', 300, function () {
-            return self::query()->pluck('value', 'key')->all();
-        });
+        try {
+            return Cache::remember('site_settings', 300, function () {
+                return self::query()->pluck('value', 'key')->all();
+            });
+        } catch (\Throwable) {
+            // Table may not exist yet before migrations run on a fresh deploy.
+            return [];
+        }
     }
 
     /**
