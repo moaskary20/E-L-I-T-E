@@ -417,18 +417,93 @@
                             @endif
                         @endforeach
                     </div>
-                    <a href="https://maps.app.goo.gl/WhAb8a7Bya6Tz5K38" target="_blank" rel="noopener noreferrer" class="contact-map" style="display: block; margin-top: 32px; position: relative; border-radius: 3px; overflow: hidden; border: 1px solid rgba(201,160,66,0.15); aspect-ratio: 2/1; cursor: pointer;">
-                        <iframe title="Elite Physio Clinics Location" src="https://maps.google.com/maps?q=Mare+Fair,+Sol+Central+Ground+Floor,+Unit+3+Northampton+NN1+1SR&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border: 0; filter: invert(90%) hue-rotate(180deg); display: block; pointer-events: none;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 12px 8px; background: linear-gradient(to top, rgba(10,31,19,0.85), transparent); display: flex; align-items: center; justify-content: center; gap: 6px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(201,160,66,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span style="font-size: 10px; color: rgba(201,160,66,0.8); letter-spacing: 0.2em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 500;">Open in Maps</span>
-                        </div>
-                        <div style="position: absolute; top: -1px; right: -1px; width: 28px; height: 28px; border-top: 2px solid rgba(201,160,66,0.4); border-right: 2px solid rgba(201,160,66,0.4); pointer-events: none;"></div>
-                        <div style="position: absolute; bottom: -1px; left: -1px; width: 28px; height: 28px; border-bottom: 2px solid rgba(201,160,66,0.4); border-left: 2px solid rgba(201,160,66,0.4); pointer-events: none;"></div>
-                    </a>
                 </div>
                 <div>
                     @include('partials.booking-form')
+                </div>
+            </div>
+
+            @php
+                $googleReviewsUrl = 'https://www.google.com/maps/place/Elite+Physio+Clinics/@52.2369026,-0.901841/data=!4m8!3m7!1s0x48770f24e9384521:0x63ef053434b83dcd!8m2!3d52.2369026!4d-0.901841!9m1!1b1';
+                $googleWriteReviewUrl = 'https://www.google.com/search?q=Elite+Physio+Clinics#lrd=0x48770f24e9384521:0x63ef053434b83dcd,3,,,,';
+                $googleReviews = [
+                    [
+                        'name' => 'Shain Ali',
+                        'initial' => 'S',
+                        'text' => 'Wafaa was excellent, welcoming, and very professional. I had 9/10 sessions with Wafaa and I can\'t recommend her enough! Every session was a step closer to my recovery.',
+                    ],
+                    [
+                        'name' => 'Shannon Bradshaw',
+                        'initial' => 'S',
+                        'text' => 'I highly recommend her and appreciate the knowledge and skills she has to offer.',
+                    ],
+                    [
+                        'name' => 'Colin Maxwell',
+                        'initial' => 'C',
+                        'text' => 'She was very thorough and attentive and the conversation flowed.',
+                    ],
+                ];
+            @endphp
+
+            <div id="reviews" class="map-reviews-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 64px; align-items: stretch;">
+                <a href="https://maps.app.goo.gl/WhAb8a7Bya6Tz5K38" target="_blank" rel="noopener noreferrer" class="contact-map" style="display: block; position: relative; border-radius: 3px; overflow: hidden; border: 1px solid rgba(201,160,66,0.15); min-height: 320px; cursor: pointer;">
+                    <iframe title="Elite Physio Clinics Location" src="https://maps.google.com/maps?q=Mare+Fair,+Sol+Central+Ground+Floor,+Unit+3+Northampton+NN1+1SR&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border: 0; filter: invert(90%) hue-rotate(180deg); display: block; pointer-events: none; position: absolute; inset: 0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 12px 8px; background: linear-gradient(to top, rgba(10,31,19,0.85), transparent); display: flex; align-items: center; justify-content: center; gap: 6px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(201,160,66,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span style="font-size: 10px; color: rgba(201,160,66,0.8); letter-spacing: 0.2em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 500;">Open in Maps</span>
+                    </div>
+                    <div style="position: absolute; top: -1px; right: -1px; width: 28px; height: 28px; border-top: 2px solid rgba(201,160,66,0.4); border-right: 2px solid rgba(201,160,66,0.4); pointer-events: none;"></div>
+                    <div style="position: absolute; bottom: -1px; left: -1px; width: 28px; height: 28px; border-bottom: 2px solid rgba(201,160,66,0.4); border-left: 2px solid rgba(201,160,66,0.4); pointer-events: none;"></div>
+                </a>
+
+                <div class="google-reviews" style="border: 1px solid rgba(201,160,66,0.15); border-radius: 3px; padding: 28px 24px; display: flex; flex-direction: column; background: rgba(250,246,239,0.02); position: relative;">
+                    <div style="position: absolute; top: -1px; right: -1px; width: 28px; height: 28px; border-top: 2px solid rgba(201,160,66,0.4); border-right: 2px solid rgba(201,160,66,0.4); pointer-events: none;"></div>
+                    <div style="position: absolute; bottom: -1px; left: -1px; width: 28px; height: 28px; border-bottom: 2px solid rgba(201,160,66,0.4); border-left: 2px solid rgba(201,160,66,0.4); pointer-events: none;"></div>
+
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px;">
+                        <div>
+                            <div style="font-size: 10px; color: rgba(201,160,66,0.55); letter-spacing: 0.25em; text-transform: uppercase; font-family: Outfit, sans-serif; margin-bottom: 8px;">Google</div>
+                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #faf6ef; margin: 0; line-height: 1;">Reviews</h3>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 36px; color: #c9a042; line-height: 1; font-weight: 400;">5.0</div>
+                            <div style="display: flex; gap: 2px; justify-content: flex-end; margin: 6px 0 4px;" aria-label="5 out of 5 stars">
+                                @for($i = 0; $i < 5; $i++)
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#c9a042"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                @endfor
+                            </div>
+                            <a href="{{ $googleReviewsUrl }}" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: rgba(250,246,239,0.45); font-family: Outfit, sans-serif; text-decoration: none; letter-spacing: 0.04em;" onmouseenter="this.style.color='#c9a042'" onmouseleave="this.style.color='rgba(250,246,239,0.45)'">53 Google reviews</a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px; flex: 1; overflow: auto;">
+                        @foreach($googleReviews as $index => $review)
+                            <div style="padding-bottom: 16px;{{ $index < count($googleReviews) - 1 ? ' border-bottom: 1px solid rgba(201,160,66,0.1);' : '' }}">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(201,160,66,0.15); border: 1px solid rgba(201,160,66,0.25); display: flex; align-items: center; justify-content: center; font-size: 11px; color: #c9a042; font-family: Outfit, sans-serif; font-weight: 600; flex-shrink: 0;">{{ $review['initial'] }}</div>
+                                    <div style="min-width: 0;">
+                                        <div style="font-size: 12px; color: rgba(250,246,239,0.85); font-family: Outfit, sans-serif; font-weight: 500;">{{ $review['name'] }}</div>
+                                        <div style="display: flex; gap: 1px; margin-top: 2px;">
+                                            @for($i = 0; $i < 5; $i++)
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="#c9a042"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                            @endfor
+                                        </div>
+                                    </div>
+                                </div>
+                                <p style="margin: 0; font-size: 13px; color: rgba(250,246,239,0.55); font-family: Outfit, sans-serif; font-weight: 300; line-height: 1.65;">“{{ $review['text'] }}”</p>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+                        <a href="{{ $googleWriteReviewUrl }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #c9a042; color: #0a1f13; padding: 12px 20px; border-radius: 2px; text-decoration: none; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 700;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            Add your review
+                        </a>
+                        <a href="{{ $googleReviewsUrl }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; padding: 12px 18px; border: 1px solid rgba(201,160,66,0.3); color: rgba(250,246,239,0.7); border-radius: 2px; text-decoration: none; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 500;" onmouseenter="this.style.borderColor='rgba(201,160,66,0.6)'; this.style.color='#c9a042'" onmouseleave="this.style.borderColor='rgba(201,160,66,0.3)'; this.style.color='rgba(250,246,239,0.7)'">
+                            View all
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -507,7 +582,9 @@
     .contact-header { margin-bottom: 40px !important; }
     .contact-header h2 { font-size: 44px !important; }
     .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-    .contact-map { margin-top: 24px !important; aspect-ratio: 3/2 !important; }
+    .map-reviews-grid { grid-template-columns: 1fr !important; gap: 24px !important; margin-top: 40px !important; }
+    .contact-map { min-height: 240px !important; }
+    .google-reviews { padding: 22px 18px !important; }
     footer { padding: 32px 20px !important; }
     .footer-inner { flex-direction: column !important; gap: 16px !important; text-align: center !important; }
     .footer-links { gap: 20px !important; }
@@ -517,6 +594,7 @@
     .about-grid { grid-template-columns: 1fr !important; }
     .why-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .contact-grid { grid-template-columns: 1fr !important; }
+    .map-reviews-grid { grid-template-columns: 1fr !important; }
     .hero-letter { font-size: clamp(68px, 10vw, 96px) !important; }
     .hero-subtitle { font-size: 18px !important; }
     .hero-tagline { font-size: 13px !important; }
