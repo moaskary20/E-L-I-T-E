@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentControll
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AvailabilityController as AdminAvailabilityController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SeoSettingsController;
 use App\Http\Controllers\Admin\WorkingHoursController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Api\AvailabilityController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::prefix('api')->group(function () {
     Route::get('/blocked-dates', [AvailabilityController::class, 'blockedDates']);
@@ -39,5 +42,7 @@ Route::prefix('clinic-portal')->name('admin.')->group(function () {
         Route::delete('availability/slots/{slot}', [AdminAvailabilityController::class, 'destroySlot'])->name('availability.slots.destroy');
         Route::get('hours', [WorkingHoursController::class, 'index'])->name('hours.index');
         Route::put('hours', [WorkingHoursController::class, 'update'])->name('hours.update');
+        Route::get('seo', [SeoSettingsController::class, 'index'])->name('seo.index');
+        Route::put('seo', [SeoSettingsController::class, 'update'])->name('seo.update');
     });
 });

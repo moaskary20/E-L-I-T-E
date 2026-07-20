@@ -921,3 +921,32 @@ input:focus, textarea:focus, select:focus {
 .wh-preview-closed { font-size: 12px; color: var(--admin-red); font-weight: 500; }
 
 .wh-actions { display: flex; justify-content: flex-end; gap: 12px; padding: 16px 24px; border-top: 1px solid var(--admin-border); background: rgba(255,255,255,0.01); }
+
+/* ══════════════════════════
+   SEO / SEARCH CONSOLE
+   ══════════════════════════ */
+.seo-page { max-width: 720px; }
+.seo-desc { font-size: 14px; color: var(--admin-text-dim); margin-bottom: 28px; line-height: 1.5; }
+.seo-form { display: flex; flex-direction: column; gap: 20px; }
+.seo-card { background: var(--admin-surface); border: 1px solid var(--admin-border); border-radius: 10px; overflow: hidden; }
+.seo-card-header { display: flex; align-items: flex-start; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--admin-border); color: var(--admin-gold); }
+.seo-card-title { font-size: 15px; font-weight: 600; color: var(--admin-text); margin-bottom: 2px; }
+.seo-card-hint { font-size: 12px; color: var(--admin-text-dim); line-height: 1.45; }
+.seo-card-hint code { font-size: 11px; color: var(--admin-gold); background: var(--admin-gold-glow); padding: 1px 6px; border-radius: 4px; }
+.seo-card-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 16px; }
+.seo-field { display: flex; flex-direction: column; gap: 6px; }
+.seo-field label { font-size: 11px; color: var(--admin-text-dim); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+.seo-field input,
+.seo-field textarea { background: var(--admin-bg); border: 1px solid var(--admin-border); color: var(--admin-text); padding: 11px 14px; font-size: 14px; font-family: var(--admin-font); border-radius: 6px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; box-sizing: border-box; }
+.seo-field textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+.seo-field input:focus,
+.seo-field textarea:focus { border-color: var(--admin-gold); box-shadow: 0 0 0 3px var(--admin-gold-dim); }
+.seo-field-help { font-size: 12px; color: var(--admin-text-muted); line-height: 1.45; margin: 0; }
+.seo-field-help code { font-size: 11px; color: var(--admin-gold); }
+.seo-check { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--admin-text); cursor: pointer; text-transform: none; letter-spacing: 0; font-weight: 450; }
+.seo-check input { width: 16px; height: 16px; accent-color: var(--admin-gold); cursor: pointer; }
+.seo-sitemap { background: rgba(255,255,255,0.02); border: 1px solid var(--admin-border); border-radius: 8px; padding: 14px 16px; }
+.seo-sitemap-label { font-size: 11px; color: var(--admin-text-dim); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; }
+.seo-sitemap-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.seo-sitemap-row code { flex: 1; min-width: 0; font-size: 12px; color: var(--admin-gold); background: var(--admin-gold-glow); padding: 8px 12px; border-radius: 5px; word-break: break-all; }
+.seo-actions { display: flex; justify-content: flex-end; padding-top: 4px; }
