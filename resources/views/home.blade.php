@@ -3,7 +3,13 @@
 @section('content')
 @php
     $whatsappUrl = config('clinic.whatsapp_url');
-    $navLinks = ['Services', 'About', 'Insurance', 'Contact'];
+    $navLinks = [
+        ['label' => 'Services', 'href' => '#services'],
+        ['label' => 'About', 'href' => '#about'],
+        ['label' => 'Insurance', 'href' => '#insurance'],
+        ['label' => 'Blog', 'href' => route('blog')],
+        ['label' => 'Contact', 'href' => '#contact'],
+    ];
     $services = [
         ['title' => 'Back Pain & Sciatica', 'desc' => 'Expert treatment for lumbar disc conditions, spinal stenosis, and sciatic nerve pain along the full nerve pathway.'],
         ['title' => 'Neck Pain & Whiplash', 'desc' => 'Comprehensive cervical spine assessment and mobilisation for acute and chronic neck conditions.'],
@@ -13,6 +19,7 @@
         ['title' => 'Frozen Shoulder', 'desc' => 'Specialised capsular mobilisation and graded stretching for adhesive capsulitis at all stages.'],
         ['title' => 'Tendon Injuries', 'desc' => "Targeted loading therapy for tennis elbow, golfer's elbow, and tendinopathy conditions."],
         ['title' => 'Knee & Ankle', 'desc' => 'Biomechanical assessment and targeted rehabilitation for lower limb conditions and instability.'],
+        ['title' => 'Shock Wave Therapy', 'desc' => 'Focused acoustic wave treatment to stimulate healing in stubborn tendon pain, plantar fasciitis, calcific shoulder, and other chronic soft-tissue conditions.'],
     ];
     $pediatricServices = [
         ['title' => 'Head Turning Preference & Torticollis', 'desc' => 'Assessment and treatment for infant neck tightness, head turning preference, and associated movement asymmetry.'],
@@ -107,7 +114,7 @@
         </a>
         <div class="hide-mobile" style="display: flex; gap: 40px; align-items: center;">
             @foreach($navLinks as $link)
-                <a href="#{{ strtolower($link) }}" class="nav-link" style="font-size: 12px; color: rgba(250,246,239,0.75); text-decoration: none; letter-spacing: 0.18em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 500;">{{ $link }}</a>
+                <a href="{{ $link['href'] }}" class="nav-link" style="font-size: 12px; color: rgba(250,246,239,0.75); text-decoration: none; letter-spacing: 0.18em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 500;">{{ $link['label'] }}</a>
             @endforeach
             <a href="#contact" class="btn-primary" style="font-size: 11px; color: #0a1f13; background: #c9a042; padding: 11px 26px; border-radius: 2; text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 700;">Book Now</a>
         </div>
@@ -120,7 +127,7 @@
     <div id="mobile-menu" style="position: fixed; inset: 0; top: 56px; z-index: 999; background: rgba(6,14,9,0.98); backdrop-filter: blur(24px); display: none; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
         <div style="width: 1px; height: 40px; background: rgba(201,160,66,0.3); margin-bottom: 16px;"></div>
         @foreach($navLinks as $link)
-            <a href="#{{ strtolower($link) }}" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: #faf6ef; text-decoration: none; letter-spacing: 0.08em; padding: 10px 0; display: block;">{{ $link }}</a>
+            <a href="{{ $link['href'] }}" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: #faf6ef; text-decoration: none; letter-spacing: 0.08em; padding: 10px 0; display: block;">{{ $link['label'] }}</a>
         @endforeach
         <div style="width: 40px; height: 1px; background: rgba(201,160,66,0.3); margin: 20px 0;"></div>
         <a href="#contact" style="display: inline-flex; align-items: center; gap: 10px; background: #c9a042; color: #0a1f13; padding: 14px 36px; border-radius: 2; text-decoration: none; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-family: Outfit, sans-serif; font-weight: 700;">
@@ -523,7 +530,7 @@
             </div>
             <div class="footer-links" style="display: flex; gap: 28px; flex-wrap: wrap; justify-content: center;">
                 @foreach($navLinks as $l)
-                    <a href="#{{ strtolower($l) }}" style="font-size: 11px; color: rgba(250,246,239,0.28); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; font-family: Outfit, sans-serif; transition: color 0.3s;" onmouseenter="this.style.color='rgba(201,160,66,0.7)'" onmouseleave="this.style.color='rgba(250,246,239,0.28)'">{{ $l }}</a>
+                    <a href="{{ $l['href'] }}" style="font-size: 11px; color: rgba(250,246,239,0.28); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; font-family: Outfit, sans-serif; transition: color 0.3s;" onmouseenter="this.style.color='rgba(201,160,66,0.7)'" onmouseleave="this.style.color='rgba(250,246,239,0.28)'">{{ $l['label'] }}</a>
                 @endforeach
                 <a href="{{ route('privacy') }}" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: rgba(250,246,239,0.28); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; font-family: Outfit, sans-serif; transition: color 0.3s;" onmouseenter="this.style.color='rgba(201,160,66,0.7)'" onmouseleave="this.style.color='rgba(250,246,239,0.28)'">Privacy Policy</a>
             </div>

@@ -8,12 +8,15 @@ use App\Http\Controllers\Admin\SeoSettingsController;
 use App\Http\Controllers\Admin\WorkingHoursController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Api\AvailabilityController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])
     ->name('sitemap')
     ->withoutMiddleware([
