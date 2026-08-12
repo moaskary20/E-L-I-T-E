@@ -30,10 +30,11 @@
     ];
     $stats = [
         ['value' => 20, 'suffix' => '+', 'label' => 'Years Experience', 'sub' => 'NHS & Private Practice'],
-        ['value' => 9, 'suffix' => '+', 'label' => 'Insurance Partners', 'sub' => 'AXA, Aviva, WPA & more'],
+        ['value' => 10, 'suffix' => '+', 'label' => 'Insurance Partners', 'sub' => 'Bupa, AXA, Aviva & more'],
         ['value' => 100, 'suffix' => '%', 'label' => 'Personalised Care', 'sub' => 'Tailored to every patient'],
     ];
     $insurance = [
+        ['name' => 'Bupa', 'logo' => 'insurance/Bupa.svg'],
         ['name' => 'AXA Health', 'logo' => 'insurance/AXA_Health.webp'],
         ['name' => 'Aviva', 'logo' => 'insurance/Aviva.svg'],
         ['name' => 'Vitality', 'logo' => 'insurance/Vitality.svg'],
@@ -63,7 +64,7 @@
     $pillars = [
         ['title' => 'NHS-Trained Expertise', 'desc' => 'Over five years within the National Health Service — clinical precision you can trust.', 'icon' => 'shield'],
         ['title' => 'Truly Personal Care', 'desc' => 'No generic protocols. Every plan is crafted around your specific condition and goals.', 'icon' => 'heart'],
-        ['title' => 'Recognised Qualifications', 'desc' => 'DPT-qualified, MCSP registered, and accepted by 9 major insurance providers.', 'icon' => 'award'],
+        ['title' => 'Recognised Qualifications', 'desc' => 'DPT-qualified, MCSP registered, and accepted by 10 major insurance providers.', 'icon' => 'award'],
         ['title' => 'Flexible Hours', 'desc' => "Evening and Saturday appointments — because your recovery shouldn't wait.", 'icon' => 'star'],
     ];
     $fmtTime = function ($t) {
@@ -424,8 +425,9 @@
             </div>
 
             @php
-                $googleReviewsUrl = 'https://www.google.com/maps/place/Elite+Physio+Clinics/@52.2369026,-0.901841/data=!4m8!3m7!1s0x48770f24e9384521:0x63ef053434b83dcd!8m2!3d52.2369026!4d-0.901841!9m1!1b1';
-                $googleWriteReviewUrl = 'https://www.google.com/search?q=Elite+Physio+Clinics#lrd=0x48770f24e9384521:0x63ef053434b83dcd,3,,,,';
+                $googlePlaceId = 'ChIJIUU46SQPd0gRzT24NDQF72M';
+                $googleReviewsUrl = 'https://search.google.com/local/reviews?placeid=' . $googlePlaceId;
+                $googleWriteReviewUrl = 'https://search.google.com/local/writereview?placeid=' . $googlePlaceId;
                 $googleReviews = [
                     [
                         'name' => 'Shain Ali',
